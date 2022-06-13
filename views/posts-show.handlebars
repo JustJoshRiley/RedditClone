@@ -1,0 +1,32 @@
+<div class="Post-Comment-Container">
+    <div class="left">
+        <div class="Post-Content">
+            <div class="Post-Username">
+                <p>User: <small>{{post.author.username}}</small></p>
+            </div>
+            <div class="Post-Title-Container">
+                <a class="Post-Title" href="{{post.url}}">{{post.title}}</a>
+            </div>
+            <div class="Post-Subreddit">
+                <p class="Subreddit">{{post.summary}}</p>
+            </div>
+        </div>
+        <div class="Post-Reply-Form">
+            <div class="Post-Title-Container">
+                <h2 class="Reply-Title">Reply </h2>
+            </div>
+            {{#if currentUser}}
+            <form action="/posts/{{post._id}}/comments" method="post">
+                <textarea class='post-input' name="content" placeholder="Comment"></textarea>
+                <button type="submit" class="submit-button">Save</button>
+            </form>
+            {{/if}}
+        </div>
+    </div>
+    <div class="right">
+        {{#each post.comments}}
+            {{> comment comment=this postId=../post._id}}
+        {{/each}}
+    </div>
+    
+</div>

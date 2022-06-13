@@ -1,0 +1,29 @@
+<div class="Post-Container">
+    {{#each posts}}
+        <div class="Post-Content">
+            <div class="Post-Username">
+                <p>User: <small>{{this.author.username}}</small></p>
+            </div>
+            <div class="Post-Title-Container">
+                <a class="Post-Title" href="/posts/{{this._id}}">{{this.title}}</a>
+            </div>
+            <div class="Post-Url-Container" >
+                <a class="Post-Url" href="{{this.url}}" target="_blank">{{this.url}}</a>
+            </div>
+            <div class="Post-Subreddit">
+                <a href="/n/{{this.subreddit}}" class="Subreddit">#{{this.subreddit}}</a>
+            </div>
+            {{#if ../currentUser}}
+            <div class="Vote-Container">
+                <form class="vote-up" data-id="{{this._id}}">
+                <button type="submit">👍</button>
+                </form>
+                <h4>{{this.voteScore}}</h4>
+                <form class="vote-down" data-id="{{this._id}}">
+                    <button type="submit">👎</button>
+                </form>
+            </div>
+            {{/if}}
+        </div>
+    {{/each}}
+</div>

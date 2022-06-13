@@ -1,0 +1,18 @@
+<div class="Navbar">
+    <div>
+        <a class="HomeButton" href="/">
+            Reddit Clone
+        </a>
+    </div>
+    <div class="Auth">
+        {{#if currentUser}}
+        <a class="NewPostButton" href="/posts/new" >New Post</a>
+        {{/if}}
+        {{#if currentUser}}
+        <a href="/logout">Logout</a>
+        {{else}}
+        <a href="/login">Login</a>
+        <a href="/sign-up">Sign Up</a>
+        {{/if}}
+    </div>
+</div>

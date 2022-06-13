@@ -1,0 +1,44 @@
+<div class="Form-Container">
+    <form class="Form-Content" action="/posts/new" method="post">
+        <h1 class="Form-Title">New Post</h1>
+        <div class="Label-Input">
+            <label for="post-title">Title</label>
+            <input
+                type="text"
+                name="title"
+                class="post-input"
+                id="post-title"
+                placeholder="Title"
+            />
+        </div>
+        <div  class="Label-Input">
+            <label for="post-url">Url</label>
+            <input
+                type="url"
+                name="url"
+                class="post-input"
+                id="post-url"
+                placeholder="https://www.google.com"
+            />
+        </div>
+        <div class="Label-Input">
+            <label for="post-summary">Summary</label>
+            <textarea
+                name="summary"
+                class="post-input"
+                id="post-summary"
+                placeholder="Summary"
+            ></textarea>
+        </div>
+        <div class="Label-Input">
+            <label for="post-subreddit">Subreddit</label>
+            <input class="post-input" name="subreddit" type="text" id="post-subreddit" placeholder="Subreddit">
+        </div>
+        <div>
+            <button
+                type="submit"
+                class="submit-button"
+            >Create Post</button>
+        </div>
+    </form>
+</div>
